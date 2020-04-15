@@ -1,7 +1,5 @@
 import Vue from 'vue'
-
 import Cookies from 'js-cookie'
-
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import {
   IMaskComponent
@@ -14,10 +12,11 @@ import App from './App'
 import store from './store'
 import router from './router'
 import './permission'
-import VueQriously from 'vue-qriously'
 import './icons' // icon
 import './utils/error-log' // error log
-/* import * as filters from './filters' // global filters */
+import ECharts from 'vue-echarts'
+import 'echarts/lib/chart/line'
+import 'echarts/lib/component/tooltip'
 Vue.component('imask-input', IMaskComponent);
 import {
   mockXHR
@@ -31,14 +30,7 @@ Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   locale
 })
-
-Vue.use(VueQriously)
-/* 
-// register global utility filters
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
- */
+Vue.component("v-chart", ECharts)
 Vue.config.productionTip = false
 
 new Vue({

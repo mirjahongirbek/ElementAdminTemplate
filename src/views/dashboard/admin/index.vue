@@ -3,7 +3,7 @@
     <el-row>
     <panel-group />
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
-      <line-chart :chart-data="lineData" />
+      <line-chart :chart-data="lineChartData.messages" />
     </el-row>
   
    
@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      lineChartData: lineChartData.newVisitis,
+      lineChartData: lineChartData,
       lineData: { expectedData: [] }
     };
   },

@@ -1,14 +1,19 @@
 <template>
   <el-row :gutter="40" class="panel-group">
-    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col" v-for="(key, value) in panels" :key="value">
+    <el-col
+      :xs="12"
+      :sm="12"
+      :lg="6"
+      class="card-panel-col"
+      v-for="(key, value) in $store.state.lite.panels"
+      :key="value"
+    >
       <div class="card-panel">
-        <div
-          class="card-panel-icon-wrapper icon-people"         
-        >
+        <div class="card-panel-icon-wrapper icon-people">
           <svg-icon :icon-class="key.icon" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">{{ key.text}}</div>
+          <div class="card-panel-text">{{ key.text }}</div>
           <count-to
             :start-val="0"
             :end-val="key.value"
@@ -18,42 +23,19 @@
         </div>
       </div>
     </el-col>
-   
   </el-row>
 </template>
 
 <script>
 import CountTo from "vue-count-to";
 export default {
-  props:{
-panels:{
-  default:[],
-
-}
-  },
   data() {
     return {
-      activeUsers: 0,
-      workerCount: 0,
-      notActiveUseCount: 0,
-      phoneCount: 0,
-      messageCount: 0,
-      clientCount: 0,
-      isActive: false,
-      regularFill: "oldlace",
-      activeFill: "tomato",
-      svgWidth: 200 + "px",
-      svgHeight: 48 + "px",
-      svgId: "mySVG",
-      messageDialog: false,
-      isRecent: false,
-      buttonLabel: "Click me to toggle"
     };
   },
   components: {
-    CountTo,   
-  },
- 
+    CountTo
+  }
 };
 </script>
 
