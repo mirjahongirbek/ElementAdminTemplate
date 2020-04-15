@@ -1,13 +1,16 @@
+import axios from 'axios'
+
+
 export default {
   install(Vue, options) {
-
+    let  http=axios.create({baseURL:options.url})
+    Vue.prototype.$http= function(){
+      return http;
+    }
     Vue.prototype.$api = {
-      axios() {
-        return options.http
-      },
       send(requestType, apiRoute, params = {}, data = null) {
         return new Promise((resolve, reject) => {
-          options.http[requestType](apiRoute, params || [], data)
+          http[requestType](apiRoute, params || [], data)
             .then(res => {
               resolve(res.data)
             })
@@ -31,6 +34,10 @@ export default {
       },
       delete(apiRoute, params = null) {
         return this.send('delete', apiRoute, params)
+      },
+      setToken(token){
+        http.defaults.headers.common["Authorization"]="Bearer "+ token;
+        localStorage.setItem("token",token);
       },
       errorHandler(err) {
         console.log(Vue)
