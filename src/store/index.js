@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import getters from './getters'
+import api from "./plugin/api"
 Vue.use(Vuex)
+Vue.use(api,{url:"url"})
+
 const modulesFiles = require.context('./modules', true, /\.js$/)
 const modules = modulesFiles.keys().reduce((modules, modulePath) => {
   const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1')
@@ -12,7 +15,7 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 
 const store = new Vuex.Store({
   modules,
-  getters,
+ getters,
   state: {
   }
 })

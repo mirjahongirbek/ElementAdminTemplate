@@ -18,13 +18,8 @@ import ECharts from 'vue-echarts'
 import 'echarts/lib/chart/line'
 import 'echarts/lib/component/tooltip'
 Vue.component('imask-input', IMaskComponent);
-import {
-  mockXHR
-} from '../mock'
 
-if (process.env.NODE_ENV === 'production') {
-  mockXHR()
-}
+
 Vue.config.silent = true
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size

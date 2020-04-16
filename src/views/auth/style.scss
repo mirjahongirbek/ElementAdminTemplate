@@ -1,0 +1,144 @@
+.login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-button {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .login-form {
+    width: 290px;
+  }
+  .forgot-password {
+    margin-top: 10px;
+  }
+  
+$teal: rgb(0, 124, 137);
+.el-button--primary {
+  background: $teal;
+  border-color: $teal;
+
+  &:hover,
+  &.active,
+  &:focus {
+    background: lighten($teal, 7);
+    border-color: lighten($teal, 7);
+  }
+}
+.login .el-input__inner:hover {
+  border-color: $teal;
+}
+.login .el-input__prefix {
+  background: rgb(238, 237, 234);
+  left: 0;
+  height: calc(100% - 2px);
+  left: 1px;
+  top: 1px;
+  border-radius: 3px;
+  .el-input__icon {
+    width: 30px;
+  }
+}
+.login .el-input input {
+  padding-left: 35px;
+}
+.login .el-card {
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+h2 {
+  font-family: "Open Sans";
+  letter-spacing: 1px;
+  font-family: Roboto, sans-serif;
+  padding-bottom: 20px;
+}
+a {
+  color: $teal;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: lighten($teal, 7);
+  }
+}
+.register .el-card {
+  width: 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.login_content {
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("https://igenius.uz/uploads/slides/00fe183a2d5f1217feb64a284851920f.jpg");
+    height: 100%;
+    position: relative;
+    opacity: 0.85;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .header {
+    padding: 20px 20px;
+    color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1,
+    h2,
+    h3 {
+      color: #f0f4f8;
+      padding: 0;
+      margin: 0;
+    }
+    .links {
+      display: flex;
+      font-family: "Open Sans";
+      span {
+        padding: 0 10px;
+        font-size: 18px;
+        border-right: 1px solid #9fb3c8;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+    .version {
+      font-family: "Open Sans";
+      padding: 0 10px;
+      color: #9fb3c8;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+  .header {
+    padding: 10px 20px;
+    .logo {
+      font-family: "Open Sans";
+      letter-spacing: 3px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    .logo .part-2 {
+      color: #d64545;
+    }
+  }
+  .login .el-card {
+    width: 340px;
+    display: flex;
+    justify-content: center;
+  }
+  .register_comp{
+    width: 100% !important;
+    height: 100vh !important;
+  }
